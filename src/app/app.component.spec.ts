@@ -1,27 +1,57 @@
-import { TestBed, async } from '@angular/core/testing';
+import { NgModule } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule }    from '@angular/common/http';
+//components
+import { AppModule } from './app.module';
+import { MessagesComponent } from './messages/messages.component';
+import { PlaylistComponent } from './playlist/playlist.component';
+import { TitleComponent } from './title/title.component';
 import { AppComponent } from './app.component';
-describe('AppComponent', () => {
+import { AppRoutingModule } from './app-routing.module';
+//services
+import { PlaylistService } from './playlist.service';
+import { MessageService } from './message.service';
+import { FormsModule } from '@angular/forms';
+import {MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule, MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatTableModule} from '@angular/material/table';
+import { RouterModule, Routes } from '@angular/router';
+import {APP_BASE_HREF} from '@angular/common';
+describe('AppModule', () => {
+  let component: AppModule;
+  let fixture: ComponentFixture<AppModule>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        
       ],
+      imports: [
+        HttpClientModule,
+        MatInputModule,
+        MatListModule,
+        MatCardModule,
+        MatTableModule,
+        MatIconModule,
+        MatPaginatorModule,
+        MatSortModule,
+        MatButtonModule,
+        MatDialogModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        AppModule,
+        RouterModule,
+       ],
+       providers:[PlaylistService,MessageService,MatDialogModule,
+         {provide: APP_BASE_HREF, useValue: '/'}
+       ],
     }).compileComponents();
   }));
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+    const fixture = TestBed.createComponent(AppModule);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
-  }));
+  
 });

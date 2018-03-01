@@ -1,0 +1,24 @@
+.contact-card{
+  margin-top: 140px;
+}
+.form-group .mat-form-field{
+  width: 100%;
+}
+.form-group-mult{
+  display: flex;
+  justify-content: space-between;
+}
+.form-group-mult .mat-form-field{
+  width: 48%;
+}
+.contact-form,.guestbook-list{
+  width: 60%;
+  margin: auto;
+}
+.post-row{
+  display: flex;
+  justify-content: center;
+}
+.list-item div{
+  padding: 0;
+}

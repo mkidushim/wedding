@@ -8,6 +8,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 })
 export class TitleComponent {
 
-  title = 'Welcome to Mike and Owl\s Wedding Playlist!';
+  title = 'Welcome to Mike and Owl\s Wedding Website!';
 
 }

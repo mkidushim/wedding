@@ -20,6 +20,14 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {UpdateModal} from './playlist/update.component';
 import {DeleteModal} from './playlist/delete.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
+import { LandingComponent } from './landing/landing.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { ContactComponent } from './contact/contact.component';
+import { TravelComponent } from './travel/travel.component';
+import { PhotoComponent } from './photo/photo.component';
+import { RegistryComponent } from './registry/registry.component';
+import { TodoComponent } from './todo/todo.component';
+import { FaqComponent } from './faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +37,15 @@ import { RsvpComponent } from './rsvp/rsvp.component';
     TitleComponent,
     UpdateModal,
     DeleteModal,
-    RsvpComponent
+    RsvpComponent,
+    LandingComponent,
+    ScheduleComponent,
+    ContactComponent,
+    TravelComponent,
+    PhotoComponent,
+    RegistryComponent,
+    TodoComponent,
+    FaqComponent
   ],
   imports: [
     CdkTableModule,

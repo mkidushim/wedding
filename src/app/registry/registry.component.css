@@ -1,7 +1,41 @@
-.registry-container{
-  margin-top: 150px;
+.reg-section{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
   text-align: center;
 }
-.mat-subheader{
+.reg-list-item:hover{
+  background-color: #ECCC58;
+}
+.reg-list-container{
+
+}
+.reg-list-item{
+  cursor: pointer;
+  margin: 25px;
+  min-width: 200px;
+  width: 200px;
+  padding: 25px 0px;
+  text-align: center;
+  background-color: #FF9999;
+  margin: 25px auto;
+  position: relative;
+  display: inline-block;
+
+}
+.reg-list-item a.btn{
+  display: flex;
+  align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  height: auto;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
 }

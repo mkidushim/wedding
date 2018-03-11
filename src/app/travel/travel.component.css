@@ -1,20 +1,29 @@
 .schedule-info{
-  margin-top: 150px;
+  margin-top: 0px;
   text-align: center;
 }
-.schedule-container{
+.travel-container{
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content:space-evenly;
 }
-.schedule-item{
-  vertical-align: top;
-  padding: 60px;
-  position: relative;
-  width: 50%;
-  display: table-cell;
-  vertical-align: middle;
+.travel-card{
+    height: auto;
+    min-height: 250px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.travel-card img{
+  width: 155px;
+}
+.travel-card .btn{
+  color: #fff;
+  background-color: #FF9999;
+  min-width: 175px;
+  padding: 15px 10px;
   text-align: center;
-}
-.schedule-item.left{
-  border-right: 1px solid black;
+  text-decoration: none;
+  text-transform: uppercase;
 }

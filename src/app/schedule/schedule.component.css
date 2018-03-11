@@ -1,5 +1,11 @@
+.schedule-section{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
 .schedule-info{
-  margin-top: 150px;
+  margin-top: 0px;
   text-align: center;
 }
 .schedule-container{
@@ -13,8 +19,61 @@
   width: 50%;
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
+  text-align: left;
 }
 .schedule-item.left{
   border-right: 1px solid black;
+}
+.travel-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.travel-card{
+  height: auto;
+  min-height: 250px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.travel-card img{
+  width: 155px;
+}
+.btn-container{
+  margin-top: 20px;
+}
+.btn{
+  color: #FF9999;
+  min-width: 175px;
+  padding: 15px 0px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.sub-title-text{
+  margin-top: 3px;
+}
+.title,.time{
+  margin: 10px 0px 7px 0px;
+  font-weight: bold;
+}
+.sub-title{
+  margin-top: 20px;
+}
+.travel-card .btn{
+  background-color: #FF9999;
+  color: #fff;
+  min-width: 175px;
+  padding: 15px 0px;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+}
+.travel-info{
+  max-width: 98%;
+  word-wrap: break-word;
+  margin: 30px auto 0 auto;
+  text-align: center;
 }

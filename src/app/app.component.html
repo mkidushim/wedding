@@ -1,20 +1,22 @@
 <header>
-  <div class="top-left-nav">
-    <span>October 20, 2018</span>
-    <span>Newport Beach, CA</span>
-  </div>
   <h1 class="main-nav-title" routerLink="/home">Alex & Mike</h1>
-  <ul class="main-nav">
-    <li routerLink="/home"> <a>Home</a></li>
-    <li routerLink="/schedule"> <a>Schedule</a></li>
-    <li routerLink="/registry"> <a>Registry</a></li>
-    <li routerLink="/travel"> <a>Travel</a></li>
-    <li routerLink="/photo"> <a>Photo</a></li>
-    <li routerLink="/todo"> <a>Things To Do</a></li>
-    <li routerLink="/faq"> <a>FAQS</a></li>
-    <li routerLink="/contact"> <a>GuestBook</a></li>
-    <li routerLink="/rsvp"> <a>RSVP</a></li>
-  </ul>
+  <div class="main-nav-date">
+    <span>October 20, 2018</span>
+  </div>
+  <nav>
+    <ul class="main-nav">
+      <li routerLink="/home"> <a>Home</a></li>
+      <li routerLink="/schedule"><a>Schedule</a></li>
+      <li routerLink="/photo"><a>Photos</a></li>
+      <li routerLink="/registry"><a>Registry</a></li>
+      <!-- COMING SOON -->
+      <!-- <li routerLink="/rsvp"><a>RSVP</a></li> -->
+      <li routerLink="/faq"><a>FAQS</a></li>
+    </ul>
+  </nav>
 </header>
+<div class="header-background">
+  
+</div>
 <router-outlet></router-outlet>
 <app-messages></app-messages>

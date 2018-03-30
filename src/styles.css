@@ -1,9 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@font-face{
+  font-family:'bakers';
+  src:url(assets/NewBaskervilleStd-Roman.otf) format("opentype");
+};
+@font-face{
+  font-family:'cursive';
+  src:url(assets/jacques.woff) format("woff");
+};
+
 body{
   margin: 0!important;
   padding: 0;
   height: 100%;
   width: 100%;
   background-color: #FFFBF0;
+  font-family: 'bakers';
+}
+.cursive-title{
+  font-family: 'cursive';
 }

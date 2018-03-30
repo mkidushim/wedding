@@ -28,10 +28,12 @@ import { PhotoComponent } from './photo/photo.component';
 import { RegistryComponent } from './registry/registry.component';
 import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
+import {CountDown} from "ng2-date-countdown";
 
 @NgModule({
   declarations: [
     AppComponent,
+    CountDown,
     PlaylistComponent,
     MessagesComponent,
     TitleComponent,

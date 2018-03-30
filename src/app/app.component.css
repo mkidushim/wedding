@@ -28,11 +28,18 @@ nav ul.main-nav{
   text-align: center;
 }
 .main-nav-title{
-
-  cursor: pointer;
+  font-family: 'cursive';
+  /*cursor: pointer;*/
+  margin: 0;
 }
 .main-nav-date{
   margin-bottom: 10px;
+  font-weight: bold;
+}
+.route-outlet{
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
 }
 .header-background{
   background-image: url('../assets/banner.png');
@@ -40,10 +47,10 @@ nav ul.main-nav{
   background-position: center;
   background-color: #FFFBF0;
   background-size: cover;
-  height: 435px;
+  height: 260px;
   width: 100%;
-  max-width: 1200px;
-  margin: 148px auto 0 auto;
+  max-width: 1000px;
+  margin: 130px auto 0 auto;
 }
 :focus{
   outline: none;

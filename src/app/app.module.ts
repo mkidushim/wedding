@@ -29,6 +29,7 @@ import { RegistryComponent } from './registry/registry.component';
 import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
 import {CountDown} from "ng2-date-countdown";
+import { CoupleComponent } from './couple/couple.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {CountDown} from "ng2-date-countdown";
     PhotoComponent,
     RegistryComponent,
     TodoComponent,
-    FaqComponent
+    FaqComponent,
+    CoupleComponent
   ],
   imports: [
     CdkTableModule,

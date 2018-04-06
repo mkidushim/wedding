@@ -10,10 +10,12 @@ import { TodoComponent } from './todo/todo.component';
 import { TravelComponent } from './travel/travel.component';
 import { PhotoComponent } from './photo/photo.component';
 import { FaqComponent } from './faq/faq.component';
+import { CoupleComponent } from './couple/couple.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'playlist', component: PlaylistComponent },
   { path: 'home', component: LandingComponent },
+  { path: 'couple', component: CoupleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'schedule', component: ScheduleComponent },
   { path: 'registry', component: RegistryComponent },

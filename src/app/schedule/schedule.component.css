@@ -1,6 +1,6 @@
 .schedule-section{
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
 }
@@ -73,22 +73,4 @@
   font-style: italic;
   font-size: 18px;
   margin-top: 20px;
-}
-.travel-card .btn{
-  background-color: #FF9999;
-  color: #fff;
-  min-width: 175px;
-  padding: 15px 0px;
-  text-decoration: none;
-  text-align: center;
-  text-transform: uppercase;
-}
-.travel-info{
-  max-width: 98%;
-  word-wrap: break-word;
-  margin: 30px auto 0 auto;
-  text-align: center;
-}
-.travel-card .btn:hover{
-  background-color: #ECCC58;
 }

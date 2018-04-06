@@ -3,8 +3,12 @@ header{
   padding:0;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 100;
+  max-width: 900px;
+  margin: 0 auto;
   background-color:#FFFBF0;
 }
 nav ul.main-nav{
@@ -30,6 +34,7 @@ nav ul.main-nav{
 .main-nav-title{
   font-family: 'cursive';
   /*cursor: pointer;*/
+  font-size: 62px;
   margin: 0;
 }
 .main-nav-date{
@@ -37,7 +42,6 @@ nav ul.main-nav{
   font-weight: bold;
 }
 .route-outlet{
-    width: 900px;
     margin: 0 auto;
     position: relative;
 }
@@ -49,9 +53,27 @@ nav ul.main-nav{
   background-size: cover;
   height: 260px;
   width: 100%;
-  max-width: 1000px;
-  margin: 130px auto 0 auto;
+  max-width: 900px;
+  margin: 185px auto 0 auto;
 }
 :focus{
   outline: none;
+}
+.footer-container{
+  padding: 10px 0px;
+  border-top: 1px solid #111;
+  border-bottom: 1px solid #111;
+  max-width: 900px;
+  height: 50px;
+  margin: 0px auto;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+}
+.footer-container a {
+  margin-left: 5px;
+  color: black;
+  text-decoration: none;
 }

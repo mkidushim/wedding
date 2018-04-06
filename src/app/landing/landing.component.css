@@ -1,27 +1,8 @@
-.banner-img-container{
+.landing-section{
   width: 100%;
-  height: 300px;
-  background-image: url(../../assets/ny.jpg);
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 0px;
-}
-.banner-img{
-  width: 100%;
-  height: auto;
-}
-.banner-img-text{
-  color: white;
-  font-size: 50px;
-  max-width: 70%;
-  text-align: center;
-  margin: auto;
-  color: #fff!important;
-  text-shadow: 0 0 100px rgba(0,0,0,.4)!important;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
 }
 
 /deep/ .countdown {
@@ -43,90 +24,6 @@
 /deep/ .measurements-number{
   margin-right: 10px;
 }
-
-.date{
-  font-size: 56px;
-  color: #343434;
-  margin-bottom: 10px;
-}
-.name-location-container{
-  
-}
-.name-container{
-  text-align: center;
-  width: 75%;
-  margin: 0px auto;
-  padding: 60px 0;
-}
-.date-container{
-  text-align: center;
-  
-}
-.date-section{
-  background-color: #fdf9ef;
-}
-.date-container2{
-  text-align: center;
-  width: 75%;
-  margin: 0px auto;
-  padding: 60px 0;
-}
-.name-1,.name-2{
-  font-size: 45px;
-}
-.amp{
-  font-style: italic;
-  font-size: 14px;
-  margin: 0 50px;
-  vertical-align: middle;
-}
-.location{
-  color: #4a4a4a;
-  font-size: 18px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.section-left,.section-right{
-  display: block;
-  /*width: 50%;*/
-  /*vertical-align: middle;*/
-  /*padding: 60px;*/
-}
-.section-right{
-  text-align: center;
-  font-size: 19px;
-  letter-spacing: 0.5px;
-  line-height: 26px;
-  margin: 0 0 10px;
-}
-.section-title{
-  font-size: 40px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  margin-top: 0px;
-}
-.section-date{
-  margin-top: 0px;
-  color: #4a4a4a;
-  font-size: 18px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.our-story{
-  text-align: center;
-  max-width: 1000px;
-  margin: 0px auto;
-  padding: 60px 0 0 0;
-  position: relative;
-}
-.proposal{
-  text-align: center;
-  max-width: 1000px;
-  margin: 0px auto;
-  padding: 45px 0 60px 0;
-  position: relative;
-}
 .footer-container{
   width: 100%;
   height: 200px;
@@ -139,9 +36,6 @@
   justify-content: center;
 }
 @media (min-width: 768px){
-  .banner-img-container{
-    height: 700px;
-  }
   .footer-container{
     height: 400px;
   }
@@ -150,4 +44,85 @@
   width: 60%;
   margin: auto;
   text-align: center;
+}
+.top-box,.bottom-box{
+  display: flex;
+  height: 400px;
+}
+.top-box >div:nth-child(1){
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  flex-direction:column;
+}
+.top-box >div:nth-child(2){
+  border-top: 1px solid black;
+  justify-content: flex-end;
+  flex:1;
+}
+.right-box > div{
+  display: flex;
+  height: 50%;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+.family-container{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.family-row{
+  height: 300px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.min-top-box{
+  border-bottom: 1px solid black;
+}
+.bottom-box >div:nth-child(1){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex:1;
+  flex-direction:column;
+}
+.family-member{
+    vertical-align: top;
+    width: 180px;
+    display: inline-block;
+    padding: 18px 0;
+}
+.family-member img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.family-name{
+  display: block;
+  padding-top: 5px;
+}
+.family-rel{
+  display: block;
+}
+.family-title{
+  display: block;
+  text-align: center;
+  font-size: 42px;
+  font-family: "cursive";
+  margin-top: 22px;
+}
+.cursive-text{
+  font-family: "cursive";
+  font-size: 36px;
+  text-align: center;
+  display: block;
+}
+.landing-link{
+  display: block;
+  color: #ffb3b3;
 }

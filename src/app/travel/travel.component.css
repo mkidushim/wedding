@@ -3,7 +3,7 @@
   text-align: center;
 }
 .travel-section{
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
 }
@@ -55,4 +55,8 @@
 .travel-title{
   text-align: center;
   font-size: 40px;
+}
+.travel-card .fly-img{
+  width: 155px;
+  height: 150px;
 }

@@ -28,13 +28,13 @@ import { PhotoComponent } from './photo/photo.component';
 import { RegistryComponent } from './registry/registry.component';
 import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
-import {CountDown} from "ng2-date-countdown";
 import { CoupleComponent } from './couple/couple.component';
+import {PaymentModule} from "./payments/payment/payment.module";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountDown,
     PlaylistComponent,
     MessagesComponent,
     TitleComponent,
@@ -49,7 +49,7 @@ import { CoupleComponent } from './couple/couple.component';
     RegistryComponent,
     TodoComponent,
     FaqComponent,
-    CoupleComponent
+    CoupleComponent,
   ],
   imports: [
     CdkTableModule,
@@ -68,7 +68,8 @@ import { CoupleComponent } from './couple/couple.component';
     MatInputModule,
     MatListModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    PaymentModule
   ],
   entryComponents: [UpdateModal,DeleteModal],
   providers: [PlaylistService,MessageService],

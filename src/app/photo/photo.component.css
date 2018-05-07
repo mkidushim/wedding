@@ -3,7 +3,7 @@
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    padding: 0 4px;
+    padding: 0;
     width: 100%;
 }
 
@@ -40,7 +40,8 @@
     }
 }
 .photo-section{
-    max-width: 1200px;
-    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    margin-bottom: 50px;
 }

@@ -113,11 +113,11 @@
   display: block;
   text-align: center;
   font-size: 42px;
-  font-family: "cursive";
+  font-family: "jaq";
   margin-top: 22px;
 }
 .cursive-text{
-  font-family: "cursive";
+  font-family: "jaq";
   font-size: 36px;
   text-align: center;
   display: block;
@@ -125,4 +125,19 @@
 .landing-link{
   display: block;
   color: #ffb3b3;
+}
+.video-container{
+  width: 100%;
+  overflow: hidden;
+  height: 400px;
+}
+.video-container video{
+  width: 100%;
+  height: auto;
+}
+@media only screen and (max-width: 768px) {
+  .family-row{
+    flex-flow: column;
+    height: auto;
+  }
 }

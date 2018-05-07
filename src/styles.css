@@ -5,7 +5,7 @@
   src:url(assets/NewBaskervilleStd-Roman.otf) format("opentype");
 };
 @font-face{
-  font-family:'cursive';
+  font-family:'jaq';
   src:url(assets/jacques.woff) format("woff");
 };
 
@@ -18,5 +18,8 @@ body{
   font-family: 'bakers';
 }
 .cursive-title{
-  font-family: 'cursive';
+  font-family: 'jaq';
+}
+h1:not(.main-nav-title){
+  margin-top: 0px;
 }

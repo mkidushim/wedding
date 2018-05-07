@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  //prod env
+  // production: true,
+  // stripeKey: 'pk_live_AQBnlMt6siY8xA0nM484ghNr'
+  //test env
+  production: true,
+  stripeKey: 'pk_test_TXiIhcV9QpGK37toCq4hhCS7',
 };

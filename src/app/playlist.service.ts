@@ -17,6 +17,7 @@ const httpOptions = {
 
 @Injectable()
 export class PlaylistService {
+  constructor(private http: HttpClient,private messageService: MessageService) { }
   private apiUrl = 'http://localhost:8888/wedding_services/';
   private log(message: string) {
     this.messageService.add('HeroService: ' + message);
@@ -66,6 +67,5 @@ export class PlaylistService {
       catchError(this.handleError<Song>('deleteSong'))
     );
   }
-  constructor(private http: HttpClient,private messageService: MessageService) { }
 
 }

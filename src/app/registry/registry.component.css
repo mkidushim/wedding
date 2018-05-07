@@ -3,15 +3,17 @@
 }
 .reg-section{
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 900px;
   width: 100%;
   text-align: center;
 }
-.reg-list-item:hover{
+.reg-list-item a:hover{
   background-color: #ECCC58;
 }
 .reg-list-container{
-
+  display: flex;
+  position: relative;
+  margin-bottom: 30px;
 }
 .reg-list-item{
   cursor: pointer;
@@ -26,7 +28,7 @@
   display: inline-block;
 
 }
-.reg-list-item a.btn{
+a.btn{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,4 +43,9 @@
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  .reg-list-container{
+    flex-flow: column;
+  }
 }

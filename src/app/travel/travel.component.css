@@ -21,11 +21,16 @@
     flex-direction: column;
 }
 .travel-card img{
-    display: block;
-    margin: 0 auto 20px auto;
-    width: 240px;
-    height: 240px;
-    border-radius: 50%;
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  filter: grayscale(1);
+  transition: all 0.5s ease-in-out;
+}
+.travel-card img:hover{
+  filter:none; 
 }
 .travel-card .address{
   text-align: center;
@@ -59,4 +64,10 @@
 .travel-card .fly-img{
   width: 155px;
   height: 150px;
+}
+/*responsiveness for travel page, just need to add display block to the travel-container*/
+@media only screen and (max-width: 768px) {
+  .travel-container{
+    flex-flow: column;
+  }
 }

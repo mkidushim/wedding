@@ -29,7 +29,7 @@ import { RegistryComponent } from './registry/registry.component';
 import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
 import { CoupleComponent } from './couple/couple.component';
-import {PaymentModule} from "./payments/payment/payment.module";
+// import {PaymentModule} from "./payments/payment/payment.module";
 
 
 @NgModule({
@@ -69,7 +69,7 @@ import {PaymentModule} from "./payments/payment/payment.module";
     MatListModule,
     MatCardModule,
     MatTableModule,
-    PaymentModule
+    // PaymentModule
   ],
   entryComponents: [UpdateModal,DeleteModal],
   providers: [PlaylistService,MessageService],

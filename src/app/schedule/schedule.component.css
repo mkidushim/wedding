@@ -90,4 +90,7 @@
   .schedule-item{
     width: 75%;
   }
+  .title-text{
+    min-height: 0;
+  }
 }

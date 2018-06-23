@@ -65,7 +65,7 @@
 }
 .right-box > div{
   display: flex;
-  height: 50%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   flex-direction:column;
@@ -75,7 +75,7 @@
   border-bottom: 1px solid black;
 }
 .family-row{
-  height: 300px;
+  height: 400px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -92,10 +92,10 @@
   flex-direction:column;
 }
 .family-member{
-    vertical-align: top;
-    width: 180px;
-    display: inline-block;
-    padding: 18px 0;
+  vertical-align: top;
+  width: 40%;
+  display: inline-block;
+  padding: 18px 0;
 }
 .family-member img{
   width: 150px;
@@ -104,10 +104,15 @@
 }
 .family-name{
   display: block;
+  font-family: "jaq";
   padding-top: 5px;
 }
 .family-rel{
   display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "jaq";
+  font-size: 20px;
 }
 .family-title{
   display: block;
@@ -139,5 +144,11 @@
   .family-row{
     flex-flow: column;
     height: auto;
+  }
+  .family-member{
+    border-top: 1px solid black;
+  }
+  .top-box .cursive-text,.bottom-box .cursive-text{
+    font-size: 16px; 
   }
 }

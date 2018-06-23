@@ -1,0 +1,5 @@
+<form #f="ngForm">
+  <input placeholder="Amount" ([ngModel])="amount" ngModel class="form-control" name="amount" #amount="ngModel">
+</form>
+<a class="btn" (click)="handlePayment(f)">Donate
+</a>

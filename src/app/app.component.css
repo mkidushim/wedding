@@ -55,10 +55,10 @@ nav ul.main-nav{
   background-position: center;
   background-color: #FFFBF0;
   background-size: cover;
-  height: 260px;
+  height: 330px;
   width: 100%;
   max-width: 900px;
-  margin: 185px auto 0 auto;
+  margin: 162px auto 0 auto;
 }
 :focus{
   outline: none;
@@ -73,7 +73,7 @@ nav ul.main-nav{
   margin-bottom: 30px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   text-align: right;
 }
 .footer-container a {
@@ -94,10 +94,11 @@ nav ul.main-nav{
     display: initial;
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: 5px;
+    right: 10px;
   }
   .main-nav{
-    height: 25px;
+    height: 33px;
   }
   .main-nav.success{
     height: auto;
@@ -109,7 +110,7 @@ nav ul.main-nav{
     font-size: 30px;
   }
   .header-background{
-    margin-top: 112px;
+    margin-top: 109px;
     height: 35vw;
   }
 }

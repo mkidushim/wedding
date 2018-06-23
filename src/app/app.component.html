@@ -6,15 +6,15 @@
   <nav>
     <ul class="main-nav" [ngClass]="status ? 'success' : 'danger'">
       <li class="nav-toggle" (click)="clickEvent()"><mat-icon>menu</mat-icon></li>
-      <li routerLink="/home" [ngClass]="status ? 'success' : 'danger'"> <a>Home</a></li>
-      <li routerLink="/couple" [ngClass]="status ? 'success' : 'danger'"><a>Couple</a></li>
-      <li routerLink="/schedule" [ngClass]="status ? 'success' : 'danger'"><a>Schedule</a></li>
-      <li routerLink="/photo" [ngClass]="status ? 'success' : 'danger'"><a>Photos</a></li>
-      <li routerLink="/travel" [ngClass]="status ? 'success' : 'danger'"><a>Travel</a></li>
-      <li routerLink="/registry" [ngClass]="status ? 'success' : 'danger'"><a>Registry</a></li>
+      <li routerLink="/home" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"> <a>Home</a></li>
+      <li routerLink="/couple" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"><a>Couple</a></li>
+      <li routerLink="/schedule" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"><a>Schedule</a></li>
+      <!-- <li routerLink="/photo" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"><a>Photos</a></li> -->
+      <li routerLink="/travel" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"><a>Travel</a></li>
+      <li routerLink="/registry" (click)="clickEvent()" [ngClass]="status ? 'success' : 'danger'"><a>Registry</a></li>
       <!-- COMING SOON -->
       <!-- <li routerLink="/rsvp"><a>RSVP</a></li> -->
-      <li routerLink="/faq"><a>FAQS</a></li>
+      <!-- <li routerLink="/faq"><a>FAQS</a></li> -->
     </ul>
   </nav>
 </header>

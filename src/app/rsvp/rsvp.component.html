@@ -1,3 +1,50 @@
-<div class="rsvp-container">
-  RSVP Section Coming Soon!
+<div class="rsvp-container" *ngIf="local.token == null">
+  <!-- RSVP Coming Soon! -->
+  <div class="rsvp-desc">
+    Please let us know your plans here by entering your name as it appears on your invitation. We hope we get to celebrate together!
+  </div>
+  <div>
+    <form class="example-form">
+      <div>
+        <mat-form-field class="name-full-width">
+          <input matInput #name placeholder="Name" value="">
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="email-full-width">
+          <input matInput #email placeholder="Email" value="">
+        </mat-form-field>
+      </div>
+      <div class="btn-row">
+        <button mat-button (click)="add(name.value,email.value);">
+          CONTINUE
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="rsvp-submit-container" *ngIf="local.token !== null">
+  <!-- RSVP Coming Soon! -->
+  <div class="rsvp-desc">
+    Text for RSVP FORM
+  </div>
+  <div>
+    <form class="example-form">
+      <div>
+        <mat-form-field class="name-full-width">
+          <input matInput name="name" placeholder="Name2" [(ngModel)]=local.name>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="email-full-width">
+          <input matInput name="email" placeholder="Email2" [(ngModel)]=local.email>
+        </mat-form-field>
+      </div>
+      <div class="btn-row">
+        <button mat-button (click)="add(name.value,email.value);">
+          CONTINUE
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

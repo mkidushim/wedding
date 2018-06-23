@@ -11,6 +11,7 @@ import { TravelComponent } from './travel/travel.component';
 import { PhotoComponent } from './photo/photo.component';
 import { FaqComponent } from './faq/faq.component';
 import { CoupleComponent } from './couple/couple.component';
+import { RsvpConfirmComponent } from './rsvp/rsvp.confirm.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'playlist', component: PlaylistComponent },
@@ -25,10 +26,11 @@ const routes: Routes = [
   { path: 'travel', component: TravelComponent },
   { path: 'photo', component: PhotoComponent },
   { path: 'rsvp', component: RsvpComponent },
+  { path: 'rsvp2/:token/:email/:name', component: RsvpConfirmComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes,{useHash: true}) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

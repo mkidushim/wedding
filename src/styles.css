@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/*text*/
 @font-face{
   font-family:'bakers';
-  src:url(assets/NewBaskervilleStd-Roman.otf) format("opentype");
+  src:url(assets/GE.ttf) format("opentype");
 };
+/*cursive*/
 @font-face{
   font-family:'jaq';
-  src:url(assets/jacques.woff) format("woff");
+  src:url(assets/Milkshake.otf) format("opentype");
 };
 
 body{

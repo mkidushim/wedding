@@ -6,11 +6,13 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { PlaylistService } from './playlist.service';
+import { RsvpService } from './rsvp.service';
 import { MessageService } from './message.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 import { TitleComponent } from './title/title.component';
 
+import { StorageServiceModule} from 'angular-webstorage-service';
 //material admin 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule, MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
@@ -20,6 +22,7 @@ import {CdkTableModule} from '@angular/cdk/table';
 import {UpdateModal} from './playlist/update.component';
 import {DeleteModal} from './playlist/delete.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
+import { RsvpConfirmComponent } from './rsvp/rsvp.confirm.component';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ContactComponent } from './contact/contact.component';
@@ -41,6 +44,7 @@ import { CoupleComponent } from './couple/couple.component';
     UpdateModal,
     DeleteModal,
     RsvpComponent,
+    RsvpConfirmComponent,
     LandingComponent,
     ScheduleComponent,
     ContactComponent,
@@ -54,6 +58,7 @@ import { CoupleComponent } from './couple/couple.component';
   imports: [
     CdkTableModule,
     BrowserModule,
+    StorageServiceModule,
     MatSortModule,
     MatDialogModule,
     MatAutocompleteModule,
@@ -72,7 +77,7 @@ import { CoupleComponent } from './couple/couple.component';
     // PaymentModule
   ],
   entryComponents: [UpdateModal,DeleteModal],
-  providers: [PlaylistService,MessageService],
+  providers: [PlaylistService,MessageService,RsvpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

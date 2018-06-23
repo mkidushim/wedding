@@ -1,4 +1,19 @@
-.rsvp-container{
-  margin-top: 0px;
+.rsvp-container,.example-form{
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+.rsvp-desc{
+  text-align: center;
+  width: 85%;
+  margin: 0px auto;
+  padding: 0;
+  position: relative;
+}
+.name-full-width,.email-full-width{
+  width: 80%;
+  margin: auto;
   text-align: center;
 }

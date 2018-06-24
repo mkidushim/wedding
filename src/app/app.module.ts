@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { PlaylistComponent } from './playlist/playlist.component';
-import { PlaylistService } from './playlist.service';
 import { RsvpService } from './rsvp.service';
 import { MessageService } from './message.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,10 +17,7 @@ import {MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,M
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
-import {UpdateModal} from './playlist/update.component';
-import {DeleteModal} from './playlist/delete.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
-import { RsvpConfirmComponent } from './rsvp/rsvp.confirm.component';
 import { LandingComponent } from './landing/landing.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { ContactComponent } from './contact/contact.component';
@@ -38,13 +33,9 @@ import { CoupleComponent } from './couple/couple.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PlaylistComponent,
     MessagesComponent,
     TitleComponent,
-    UpdateModal,
-    DeleteModal,
     RsvpComponent,
-    RsvpConfirmComponent,
     LandingComponent,
     ScheduleComponent,
     ContactComponent,
@@ -76,8 +67,7 @@ import { CoupleComponent } from './couple/couple.component';
     MatTableModule,
     // PaymentModule
   ],
-  entryComponents: [UpdateModal,DeleteModal],
-  providers: [PlaylistService,MessageService,RsvpService],
+  providers: [MessageService,RsvpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -4,12 +4,10 @@ import { HttpClientModule }    from '@angular/common/http';
 //components
 import { AppModule } from './app.module';
 import { MessagesComponent } from './messages/messages.component';
-import { PlaylistComponent } from './playlist/playlist.component';
 import { TitleComponent } from './title/title.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 //services
-import { PlaylistService } from './playlist.service';
 import { MessageService } from './message.service';
 import { FormsModule } from '@angular/forms';
 import {MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule, MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
@@ -43,7 +41,7 @@ describe('AppModule', () => {
         AppModule,
         RouterModule,
        ],
-       providers:[PlaylistService,MessageService,MatDialogModule,
+       providers:[MessageService,MatDialogModule,
          {provide: APP_BASE_HREF, useValue: '/'}
        ],
     }).compileComponents();

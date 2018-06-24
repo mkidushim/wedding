@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {PaymentModule} from "../payments/payment/payment.module";
 @Component({
   selector: 'app-registry',
   templateUrl: './registry.component.html',

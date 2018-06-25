@@ -12,8 +12,8 @@
   padding: 0;
   position: relative;
 }
-.name-full-width,.email-full-width{
+.name-full-width,.full-width{
   width: 80%;
   margin: auto;
-  text-align: center;
+  text-align: left;
 }

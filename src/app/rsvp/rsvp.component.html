@@ -13,7 +13,7 @@
         </mat-form-field>
       </div>
       <div>
-        <mat-form-field class="email-full-width">
+        <mat-form-field class="full-width">
           <input matInput #email placeholder="Email" value="">
         </mat-form-field>
       </div>
@@ -39,7 +39,7 @@
             </mat-form-field>
           </div>
           <div>
-            <mat-form-field class="email-full-width">
+            <mat-form-field class="full-width">
               <input matInput #mainEmail name="email" placeholder="Email" [(ngModel)]=local.email>
             </mat-form-field>
           </div>
@@ -50,7 +50,7 @@
             </mat-radio-group>
           </div>
           <div>
-            <mat-form-field class="email-full-width">
+            <mat-form-field class="full-width">
               <input matInput #mainSong name="song" placeholder="Song" [(ngModel)]=local.song>
             </mat-form-field>
           </div>
@@ -67,7 +67,7 @@
               </mat-form-field>
             </div>
             <div>
-              <mat-form-field class="email-full-width">
+              <mat-form-field class="full-width">
                 <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
               </mat-form-field>
             </div>
@@ -78,7 +78,7 @@
               </mat-radio-group>
             </div>
             <div>
-              <mat-form-field class="email-full-width">
+              <mat-form-field class="full-width">
                 <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
               </mat-form-field>
             </div>
@@ -104,11 +104,12 @@
                    bindValue="id"
                    placeholder="Select Additional Guest"
                    [(ngModel)]="forms[i].name"
-                   name="name{{i}}">
+                   name="name{{i}}"
+                   class="full-width">
               </ng-select>
             </div>
             <div>
-              <mat-form-field class="email-full-width">
+              <mat-form-field class="full-width">
                 <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
               </mat-form-field>
             </div>
@@ -119,7 +120,7 @@
               </mat-radio-group>
             </div>
             <div>
-              <mat-form-field class="email-full-width">
+              <mat-form-field class="full-width">
                 <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
               </mat-form-field>
             </div>
@@ -131,7 +132,7 @@
       <button mat-button (click)="submit();">
         Submit
       </button>
-      <button mat-button (click)="addForm();">
+      <button mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
         Add Person
       </button>
     </div>

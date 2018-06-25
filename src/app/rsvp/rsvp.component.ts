@@ -84,6 +84,10 @@ export class RsvpComponent implements OnInit {
     console.log(output);
   }
   addForm():void{
+    console.log();
+    if(this.local.plus_one == '1' && this.forms.length > 0){
+      return;
+    }
     this.forms.push({name:null,email:null,song:null,coming:'1'});
     console.log(this.forms);
   }

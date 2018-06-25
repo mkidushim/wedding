@@ -20,7 +20,7 @@ export class RsvpComponent implements OnInit {
   name: string;
   store:any;
   forms:any =[];
-  local: any = {name:null,email:null,song:null,coming:'1',token:null};
+  local: any = {name:null,email:null,song:null,coming:'1',message:null,token:null};
   storeObject:any =['email','name','token','plus_one'];
   guest_list:any  = [];
   // token: string = undefined;
@@ -66,6 +66,7 @@ export class RsvpComponent implements OnInit {
          this.saveInLocal('name',invitee.name);
          this.saveInLocal('email',invitee.email);
          this.saveInLocal('plus_one',invitee.plus_one);
+         this.getFromLocal();
          // this.router.navigateByUrl('/rsvp2/'+invitee.token+'/'+invitee.email+'/'+invitee.name);
       });
   }
@@ -88,7 +89,7 @@ export class RsvpComponent implements OnInit {
     if(this.local.plus_one == '1' && this.forms.length > 0){
       return;
     }
-    this.forms.push({name:null,email:null,song:null,coming:'1'});
+    this.forms.push({name:null,email:null,song:null,message:null,coming:'1'});
     console.log(this.forms);
   }
 }

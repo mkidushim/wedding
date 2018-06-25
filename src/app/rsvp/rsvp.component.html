@@ -27,15 +27,15 @@
 </div>
 <div class="rsvp-submit-container" *ngIf="local.token !== null">
   <div class="rsvp-desc">
-    Text for RSVP FORM
+    Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click add guest below for each additional guest.  
   </div>
   <div>
-    <mat-card>
-      <mat-card-content>
+    <!-- <mat-card>
+      <mat-card-content> -->
         <form class="main-form">
           <div>
             <mat-form-field class="name-full-width">
-              <input matInput #mainName name="name" placeholder="Name" [(ngModel)]=local.name>
+              <input matInput #mainName required name="name" placeholder="Name" [(ngModel)]=local.name>
             </mat-form-field>
           </div>
           <div>
@@ -54,13 +54,18 @@
               <input matInput #mainSong name="song" placeholder="Song" [(ngModel)]=local.song>
             </mat-form-field>
           </div>
+          <div>
+              <mat-form-field class="full-width">
+                <textarea matInput #mainMessage name="message" placeholder="Message"[(ngModel)]=local.message></textarea>
+              </mat-form-field>
+            </div>
         </form>
-      </mat-card-content>
-    </mat-card>
+      <!-- </mat-card-content>
+    </mat-card> -->
     <div *ngIf="local.plus_one == 1">
-      <mat-card *ngFor="let form of forms; let i=index">
-        <mat-card-content>
-          <form class="secondary-form">
+      <!-- <mat-card *ngFor="let form of forms; let i=index">
+        <mat-card-content> -->
+          <form class="secondary-form" *ngFor="let form of forms; let i=index">
             <div>
               <mat-form-field class="name-full-width">
                 <input matInput ngClass="name{{i}}" name="name{{i}}" required placeholder="Name" [(ngModel)]=forms[i].name>
@@ -82,14 +87,19 @@
                 <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
               </mat-form-field>
             </div>
+            <div>
+              <mat-form-field class="full-width">
+                <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
+              </mat-form-field>
+            </div>
           </form>
-        </mat-card-content>
-      </mat-card>
+        <!-- </mat-card-content>
+      </mat-card> -->
     </div>
     <div *ngIf="local.plus_one == 0">
-      <mat-card *ngFor="let form of forms; let i=index">
-        <mat-card-content>
-          <form class="secondary-form">
+      <!-- <mat-card *ngFor="let form of forms; let i=index">
+        <mat-card-content> -->
+          <form class="secondary-form" *ngFor="let form of forms; let i=index">
             <div>
               <!-- <mat-form-field class="name-full-width">
                 <mat-select ngClass="name{{i}}" placeholder="Name" name="name{{i}}" [(ngModel)]=forms[i].name>
@@ -99,7 +109,7 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field> -->
-              <ng-select [items]="guest_list"
+              <ng-select required [items]="guest_list"
                    bindLabel="name"
                    bindValue="id"
                    placeholder="Select Additional Guest"
@@ -124,9 +134,14 @@
                 <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
               </mat-form-field>
             </div>
+            <div>
+              <mat-form-field class="full-width">
+                <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
+              </mat-form-field>
+            </div>
           </form>
-        </mat-card-content>
-      </mat-card>
+        <!-- </mat-card-content>
+      </mat-card> -->
     </div>
     <div class="btn-row">
       <button mat-button (click)="submit();">

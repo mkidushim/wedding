@@ -19,16 +19,24 @@ export class RsvpComponent implements OnInit {
   email: string;
   name: string;
   store:any;
-  local: any = {token:null};
-  storeObject:any =['email','name','token'];
+  forms:any =[];
+  local: any = {name:null,email:null,song:null,coming:'1',token:null};
+  storeObject:any =['email','name','token','plus_one'];
+  guest_list:any  = [];
   // token: string = undefined;
   constructor(@Inject(SESSION_STORAGE) private storage: WebStorageService,private rsvpService:RsvpService,private router: Router) { }
 
   ngOnInit() {
     console.log(this.getFromLocal());
+    this.getGuestList();
   }
 
-
+  getGuestList(): any {
+    this.rsvpService.getGuests()
+    .subscribe(invitee => {
+       this.guest_list = invitee;
+    });   
+  }
   getFromLocal(): any {
     this.store =this.storage;
     for(var i in this.storeObject){
@@ -57,7 +65,26 @@ export class RsvpComponent implements OnInit {
          this.saveInLocal('token',invitee.token);
          this.saveInLocal('name',invitee.name);
          this.saveInLocal('email',invitee.email);
+         this.saveInLocal('plus_one',invitee.plus_one);
          // this.router.navigateByUrl('/rsvp2/'+invitee.token+'/'+invitee.email+'/'+invitee.name);
       });
+  }
+  submit(): void {
+    var token: string = this.storage.get('token');
+    console.log(this.local);
+    console.log(this.forms);
+    var output:any = [];
+    var local_output:any = [];
+    for(var i in this.forms){
+      output.push(this.forms[i]);  
+    }
+    local_output = Object.assign({}, this.local);
+    delete local_output.token;
+    output.push(local_output);
+    console.log(output);
+  }
+  addForm():void{
+    this.forms.push({name:null,email:null,song:null,coming:'1'});
+    console.log(this.forms);
   }
 }

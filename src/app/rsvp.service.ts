@@ -38,13 +38,13 @@ export class RsvpService {
       return of(result as T);
     };
   }
-  // getPlaylist (): Observable<Song[]> {
-  //   return this.http.get<Invitee[]>(this.apiUrl+'get_songs.php')
-  //     .pipe(
-  //       tap(Song => this.log(`fetched Playlist`)),
-  //       catchError(this.handleError('getPlaylist', []))
-  //     );
-  // }
+  getGuests (): Observable<Invitee[]> {
+    return this.http.get<Invitee[]>(this.apiUrl+'get_guests.php')
+      .pipe(
+        tap(Invitee => this.log(`fetched Guest List`)),
+        catchError(this.handleError('getGuests', []))
+      );
+  }
 
   checkInvite(invitee: Invitee): Observable<Invitee> {
     return this.http.post<Invitee>(this.apiUrl+'check_rsvp.php', invitee, httpOptions).pipe(

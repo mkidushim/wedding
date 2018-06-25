@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 
+import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
+
 import { AppComponent } from './app.component';
 import { RsvpService } from './rsvp.service';
 import { MessageService } from './message.service';
@@ -13,7 +15,7 @@ import { TitleComponent } from './title/title.component';
 import { StorageServiceModule} from 'angular-webstorage-service';
 //material admin 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule, MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
+import {MatSelectModule,ErrorStateMatcher,MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule,MatRadioModule,MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -27,6 +29,7 @@ import { RegistryComponent } from './registry/registry.component';
 import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
 import { CoupleComponent } from './couple/couple.component';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 // import {PaymentModule} from "./payments/payment/payment.module";
 
 
@@ -44,7 +47,7 @@ import { CoupleComponent } from './couple/couple.component';
     RegistryComponent,
     TodoComponent,
     FaqComponent,
-    CoupleComponent,
+    CoupleComponent
   ],
   imports: [
     CdkTableModule,
@@ -65,9 +68,11 @@ import { CoupleComponent } from './couple/couple.component';
     MatListModule,
     MatCardModule,
     MatTableModule,
-    // PaymentModule
+    MatRadioModule,
+    MatSelectModule,
+    NgSelectModule
   ],
-  providers: [MessageService,RsvpService],
+  providers: [MessageService,RsvpService,ErrorStateMatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule {

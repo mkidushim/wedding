@@ -54,6 +54,12 @@
   height: 100%;
   width: 33%;
 }
+.rect-img.rect2{
+  width: 35%;
+}
+.rect-img.rect1{
+  width: 46.75%;
+}
 .couple-title{
   text-align: center;
   font-size: 42px;

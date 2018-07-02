@@ -18,7 +18,7 @@ const httpOptions = {
 @Injectable()
 export class RsvpService {
   constructor(private http: HttpClient,private messageService: MessageService) { }
-  private apiUrl = 'https://localhost/wedding_services/';
+  private apiUrl = 'http://mikeandalexwedding2018.com/api/';
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -59,11 +59,4 @@ export class RsvpService {
       catchError(this.handleError<Rsvp>('submitRsvp'))
     );
   }
-  // deleteSong(song: Song): Observable<Song>  {
-  //   return this.http.post<Song>(this.apiUrl+'delete_song.php', song, httpOptions).pipe(
-  //     tap((song: Song) => this.log(`updated song w/ name=${song.id}`)),
-  //     catchError(this.handleError<Song>('deleteSong'))
-  //   );
-  // }
-
 }

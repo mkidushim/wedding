@@ -86,6 +86,23 @@ export class RsvpComponent implements OnInit {
     delete local_output.token;
     output.push(local_output);
     for(var i in this.forms){
+      for(var n in this.forms[i]){
+        if(this.forms[i][n] != null){
+          this.forms[i][n] = this.forms[i][n].trim();  
+        }
+      }
+      console.log(this.forms[i]['id']);
+      if(output[0]['plus_one'] == '0'){
+        if(this.forms[i]['id'] == '' || this.forms[i]['id'] == null){
+          alert("Please make sure all rsvp's include a name");
+          return;
+        }
+      }else{
+        if(this.forms[i]['name'] == '' || this.forms[i]['name'] == null){
+          alert("Please make sure all rsvp's include a name");
+          return;
+        }
+      }
       output.push(this.forms[i]);  
     }
     console.log(output);

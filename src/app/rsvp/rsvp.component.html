@@ -142,10 +142,10 @@
         </mat-card> -->
       </div>
       <div class="btn-row">
-        <button mat-button (click)="submit();">
+        <button type="button" mat-button (click)="submit();">
           Submit
         </button>
-        <button mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
+        <button type="button" mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
           Add Guest
         </button>
       </div>

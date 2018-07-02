@@ -4,4 +4,6 @@ export class Invitee {
   email: string;
   plus_one: string;
   token: string;
+  status: string;
+  content: string;
 }

@@ -9,6 +9,7 @@
   text-align: center;
   width: 85%;
   margin: 0px auto;
+  margin-bottom: 20px;
   padding: 0;
   position: relative;
 }
@@ -16,4 +17,33 @@
   width: 80%;
   margin: auto;
   text-align: left;
+}
+div.full-width{
+  padding-bottom: 1.25em;
+  padding-top: .5em;
+}
+.main-form,.secondary-form{
+  padding: 20px;
+  border: 1px solid black;
+  position: relative;
+}
+.main-form{
+  padding: 20px;
+  border-top: 1px solid black;
+}
+.remove-form-row{
+  height: 25px;
+}
+.remove-form-btn{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 0;
+  min-width: 50px;
+}
+.rsvp-submitted{
+  margin: 0px auto 50px auto;
+}
+.rsvp-title{
+  margin-bottom: 10px;
 }

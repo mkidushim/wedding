@@ -7,6 +7,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 import { MessageService } from './message.service';
 import { Invitee } from './invitee';
+import { Rsvp } from './rsvp';
 
 
 const httpOptions = {
@@ -38,8 +39,8 @@ export class RsvpService {
       return of(result as T);
     };
   }
-  getGuests (): Observable<Invitee[]> {
-    return this.http.get<Invitee[]>(this.apiUrl+'get_guests.php')
+  getGuests (invitee: Invitee): Observable<Invitee[]> {
+    return this.http.post<Invitee[]>(this.apiUrl+'get_guests.php',invitee,httpOptions)
       .pipe(
         tap(Invitee => this.log(`fetched Guest List`)),
         catchError(this.handleError('getGuests', []))
@@ -52,12 +53,12 @@ export class RsvpService {
       catchError(this.handleError<Invitee>('checkInvite'))
     );
   }
-  // updateSong(song: Song): Observable<Song>  {
-  //   return this.http.post<Song>(this.apiUrl+'update_song.php', song, httpOptions).pipe(
-  //     tap((song: Song) => this.log(`updated song w/ name=${song.id}`)),
-  //     catchError(this.handleError<Song>('updateSong'))
-  //   );
-  // }
+  submitRsvp(rsvp: Rsvp): Observable<Rsvp[]>  {
+    return this.http.post<Rsvp[]>(this.apiUrl+'submit_rsvp.php', rsvp, httpOptions).pipe(
+      tap((rsvp: Rsvp) => this.log(`Submitted RSVP`)),
+      catchError(this.handleError<Rsvp>('submitRsvp'))
+    );
+  }
   // deleteSong(song: Song): Observable<Song>  {
   //   return this.http.post<Song>(this.apiUrl+'delete_song.php', song, httpOptions).pipe(
   //     tap((song: Song) => this.log(`updated song w/ name=${song.id}`)),

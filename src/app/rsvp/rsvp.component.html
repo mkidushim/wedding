@@ -1,155 +1,161 @@
-<!-- <div class="rsvp-container">
-  RSVP Section Coming Soon!
-</div> -->
-<div class="rsvp-container" *ngIf="local.token == null">
-  <div class="rsvp-desc">
-    Please let us know your plans here by entering your name as it appears on your invitation. We hope we get to celebrate together!
-  </div>
-  <div>
-    <form class="example-form">
-      <div>
-        <mat-form-field class="name-full-width">
-          <input matInput #name placeholder="Name" value="">
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field class="full-width">
-          <input matInput #email placeholder="Email" value="">
-        </mat-form-field>
-      </div>
-      <div class="btn-row">
-        <button mat-button (click)="add(name.value,email.value);">
-          CONTINUE
-        </button>
-      </div>
-    </form>
-  </div>
+<div class="rsvp-container">
+  <h1 class="rsvp-title cursive-title">RSVP</h1>
 </div>
-<div class="rsvp-submit-container" *ngIf="local.token !== null">
-  <div class="rsvp-desc">
-    Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click add guest below for each additional guest.  
+<div *ngIf="local.submitted == null">
+  <div class="rsvp-container" *ngIf="local.token == null">
+    <div class="rsvp-desc">
+      Please let us know your plans here by entering your name as it appears on your invitation. We hope we get to celebrate together!
+    </div>
+    <div>
+      <form class="example-form">
+        <div>
+          <mat-form-field class="name-full-width">
+            <input matInput #name placeholder="Name" value="">
+          </mat-form-field>
+        </div>
+        <div class="btn-row">
+          <button mat-button (click)="add(name.value);">
+            CONTINUE
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div>
-    <!-- <mat-card>
-      <mat-card-content> -->
-        <form class="main-form">
-          <div>
-            <mat-form-field class="name-full-width">
-              <input matInput #mainName required name="name" placeholder="Name" [(ngModel)]=local.name>
-            </mat-form-field>
-          </div>
-          <div>
-            <mat-form-field class="full-width">
-              <input matInput #mainEmail name="email" placeholder="Email" [(ngModel)]=local.email>
-            </mat-form-field>
-          </div>
-          <div>
-            <mat-radio-group #mainRadio name="radio" [(ngModel)]=local.coming>
-              <mat-radio-button value="1">Attending</mat-radio-button>
-              <mat-radio-button value="0">Not Attending</mat-radio-button>
-            </mat-radio-group>
-          </div>
-          <div>
-            <mat-form-field class="full-width">
-              <input matInput #mainSong name="song" placeholder="Song" [(ngModel)]=local.song>
-            </mat-form-field>
-          </div>
-          <div>
-              <mat-form-field class="full-width">
-                <textarea matInput #mainMessage name="message" placeholder="Message"[(ngModel)]=local.message></textarea>
-              </mat-form-field>
-            </div>
-        </form>
-      <!-- </mat-card-content>
-    </mat-card> -->
-    <div *ngIf="local.plus_one == 1">
-      <!-- <mat-card *ngFor="let form of forms; let i=index">
+  <div class="rsvp-submit-container" *ngIf="local.token !== null">
+    <div class="rsvp-desc">
+      Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click on the add guest button below.  
+    </div>
+    <div>
+      <!-- <mat-card>
         <mat-card-content> -->
-          <form class="secondary-form" *ngFor="let form of forms; let i=index">
+          <form class="main-form">
             <div>
               <mat-form-field class="name-full-width">
-                <input matInput ngClass="name{{i}}" name="name{{i}}" required placeholder="Name" [(ngModel)]=forms[i].name>
+                <input matInput #mainName disabled required name="name" placeholder="Name" [(ngModel)]=local.name>
               </mat-form-field>
             </div>
             <div>
               <mat-form-field class="full-width">
-                <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
+                <input matInput #mainEmail name="email" placeholder="Email" [(ngModel)]=local.email>
               </mat-form-field>
             </div>
-            <div>
-              <mat-radio-group ngClass="radio{{i}}" name="coming{{i}}" required [(ngModel)]=forms[i].coming>
+            <div class="full-width">
+              <mat-radio-group #mainRadio name="radio" [(ngModel)]=local.coming>
                 <mat-radio-button value="1">Attending</mat-radio-button>
                 <mat-radio-button value="0">Not Attending</mat-radio-button>
               </mat-radio-group>
             </div>
             <div>
               <mat-form-field class="full-width">
-                <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
+                <input matInput #mainSong name="song" placeholder="Song" [(ngModel)]=local.song>
               </mat-form-field>
             </div>
             <div>
-              <mat-form-field class="full-width">
-                <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
-              </mat-form-field>
-            </div>
+                <mat-form-field class="full-width">
+                  <textarea matInput #mainMessage name="message" placeholder="Message"[(ngModel)]=local.message></textarea>
+                </mat-form-field>
+              </div>
           </form>
         <!-- </mat-card-content>
       </mat-card> -->
+      <div *ngIf="local.plus_one == 1">
+        <!-- <mat-card *ngFor="let form of forms; let i=index">
+          <mat-card-content> -->
+            <form class="secondary-form" *ngFor="let form of forms; let i=index">
+              <div class="remove-form-row">
+                <button class="remove-form-btn" mat-button (click)="removeForm(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+              <div>
+                <mat-form-field class="name-full-width">
+                  <input matInput ngClass="name{{i}}" name="name{{i}}" required placeholder="Name" [(ngModel)]=forms[i].name>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
+                </mat-form-field>
+              </div>
+              <div class="full-width">
+                <mat-radio-group ngClass="radio{{i}}" name="coming{{i}}" required [(ngModel)]=forms[i].coming>
+                  <mat-radio-button value="1">Attending</mat-radio-button>
+                  <mat-radio-button value="0">Not Attending</mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          <!-- </mat-card-content>
+        </mat-card> -->
+      </div>
+      <div *ngIf="local.plus_one == 0">
+        <!-- <mat-card *ngFor="let form of forms; let i=index">
+          <mat-card-content> -->
+            <form class="secondary-form" *ngFor="let form of forms; let i=index">
+              <div class="remove-form-row">
+                <button class="remove-form-btn" mat-button (click)="removeForm(i)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+              <div>
+                <ng-select required [items]="guest_list"
+                     bindLabel="name"
+                     bindValue="id"
+                     placeholder="Select Additional Guest *"
+                     [(ngModel)]="forms[i].id"
+                     name="name{{i}}"
+                     class="full-width">
+                </ng-select>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
+                </mat-form-field>
+              </div>
+              <div class="full-width">
+                <mat-radio-group ngClass="radio{{i}}" name="coming{{i}}" required [(ngModel)]=forms[i].coming>
+                  <mat-radio-button value="1">Attending</mat-radio-button>
+                  <mat-radio-button value="0">Not Attending</mat-radio-button>
+                </mat-radio-group>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
+                </mat-form-field>
+              </div>
+              <div>
+                <mat-form-field class="full-width">
+                  <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          <!-- </mat-card-content>
+        </mat-card> -->
+      </div>
+      <div class="btn-row">
+        <button mat-button (click)="submit();">
+          Submit
+        </button>
+        <button mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
+          Add Guest
+        </button>
+      </div>
     </div>
-    <div *ngIf="local.plus_one == 0">
-      <!-- <mat-card *ngFor="let form of forms; let i=index">
-        <mat-card-content> -->
-          <form class="secondary-form" *ngFor="let form of forms; let i=index">
-            <div>
-              <!-- <mat-form-field class="name-full-width">
-                <mat-select ngClass="name{{i}}" placeholder="Name" name="name{{i}}" [(ngModel)]=forms[i].name>
-
-                  <mat-option *ngFor="let guest of guest_list" [value]="guest.id">
-                    {{ guest.name }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field> -->
-              <ng-select required [items]="guest_list"
-                   bindLabel="name"
-                   bindValue="id"
-                   placeholder="Select Additional Guest"
-                   [(ngModel)]="forms[i].name"
-                   name="name{{i}}"
-                   class="full-width">
-              </ng-select>
-            </div>
-            <div>
-              <mat-form-field class="full-width">
-                <input matInput ngClass="email{{i}}" name="email{{i}}" type="email" placeholder="Email" [(ngModel)]=forms[i].email>
-              </mat-form-field>
-            </div>
-            <div>
-              <mat-radio-group ngClass="radio{{i}}" name="coming{{i}}" required [(ngModel)]=forms[i].coming>
-                <mat-radio-button value="1">Attending</mat-radio-button>
-                <mat-radio-button value="0">Not Attending</mat-radio-button>
-              </mat-radio-group>
-            </div>
-            <div>
-              <mat-form-field class="full-width">
-                <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
-              </mat-form-field>
-            </div>
-            <div>
-              <mat-form-field class="full-width">
-                <textarea matInput ngClass="message{{i}}" name="message{{i}}" placeholder="Message"[(ngModel)]=forms[i].message></textarea>
-              </mat-form-field>
-            </div>
-          </form>
-        <!-- </mat-card-content>
-      </mat-card> -->
-    </div>
-    <div class="btn-row">
-      <button mat-button (click)="submit();">
-        Submit
-      </button>
-      <button mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
-        Add Person
-      </button>
+  </div>
+</div>
+<div *ngIf="local.submitted != null">
+  <div class="rsvp-container">
+    <div class="rsvp-submitted">
+      Thank you for your RSVP!
     </div>
   </div>
 </div>

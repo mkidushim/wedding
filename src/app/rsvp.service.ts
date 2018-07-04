@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
+import { environment } from '../environments/environment';
 import { MessageService } from './message.service';
 import { Invitee } from './invitee';
 import { Rsvp } from './rsvp';
@@ -18,7 +19,7 @@ const httpOptions = {
 @Injectable()
 export class RsvpService {
   constructor(private http: HttpClient,private messageService: MessageService) { }
-  private apiUrl = 'http://mikeandalexwedding2018.com/api/';
+  private apiUrl = environment.baseURL;
   /**
    * Handle Http operation that failed.
    * Let the app continue.

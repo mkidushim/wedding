@@ -13,7 +13,7 @@
             <input matInput #name placeholder="Name" value="">
           </mat-form-field>
         </div>
-        <div class="btn-row">
+        <div class="btn-row main">
           <button mat-button (click)="add(name.value);">
             CONTINUE
           </button>
@@ -23,12 +23,17 @@
   </div>
   <div class="rsvp-submit-container" *ngIf="local.token !== null">
     <div class="rsvp-desc">
-      Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click on the add guest button below.  
+      Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click on the plus below.  
     </div>
     <div>
       <!-- <mat-card>
         <mat-card-content> -->
           <form class="main-form">
+            <div class="add-rsvp-row">
+              <button matTooltipPosition="above" matTooltip="Add another guest" type="button" class="add-rsvp-btn" mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
             <div>
               <mat-form-field class="name-full-width">
                 <input matInput #mainName disabled required name="name" placeholder="Name" [(ngModel)]=local.name>
@@ -142,11 +147,11 @@
         </mat-card> -->
       </div>
       <div class="btn-row">
+         <button type="button" mat-button (click)="cancel();">
+          Cancel
+        </button>
         <button type="button" mat-button (click)="submit();">
           Submit
-        </button>
-        <button type="button" mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
-          Add Guest
         </button>
       </div>
     </div>

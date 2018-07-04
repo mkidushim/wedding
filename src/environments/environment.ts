@@ -6,4 +6,5 @@
 export const environment = {
   production: false,
   stripeKey: 'pk_test_TXiIhcV9QpGK37toCq4hhCS7',
+  baseURL: 'https://localhost/wedding_services/',
 };

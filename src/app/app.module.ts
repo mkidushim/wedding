@@ -15,7 +15,7 @@ import { TitleComponent } from './title/title.component';
 import { StorageServiceModule} from 'angular-webstorage-service';
 //material admin 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSelectModule,ErrorStateMatcher,MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule,MatRadioModule,MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
+import { MatTooltipModule,MatSelectModule,ErrorStateMatcher,MatIconModule,MatDialogModule,MatAutocompleteModule,MatPaginatorModule,MatSortModule,MatButtonModule,MatRadioModule,MatCheckboxModule,MatInputModule,MatListModule} from '@angular/material';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {CdkTableModule} from '@angular/cdk/table';
@@ -70,6 +70,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MatTableModule,
     MatRadioModule,
     MatSelectModule,
+    MatTooltipModule,
     NgSelectModule
   ],
   providers: [MessageService,RsvpService,ErrorStateMatcher],

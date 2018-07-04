@@ -123,4 +123,11 @@ export class RsvpComponent implements OnInit {
     this.getGuestList();
     console.log(this.forms);
   }
+  cancel():void{
+    console.log('cancel');
+    for(var i in this.storeObject){
+      this.storage.remove(this.storeObject[i]);
+    }
+    this.getFromLocal();
+  }
 }

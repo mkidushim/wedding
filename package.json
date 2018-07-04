@@ -36,6 +36,7 @@
     "ngx-mat-select-search": "^1.2.3",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.2.1",
+    "uglifyjs-webpack-plugin": "1.1.5",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

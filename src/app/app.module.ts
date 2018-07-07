@@ -30,6 +30,8 @@ import { TodoComponent } from './todo/todo.component';
 import { FaqComponent } from './faq/faq.component';
 import { CoupleComponent } from './couple/couple.component';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 // import {PaymentModule} from "./payments/payment/payment.module";
 
 
@@ -71,7 +73,8 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
     MatRadioModule,
     MatSelectModule,
     MatTooltipModule,
-    NgSelectModule
+    NgSelectModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [MessageService,RsvpService,ErrorStateMatcher],
   bootstrap: [AppComponent]

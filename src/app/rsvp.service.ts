@@ -41,11 +41,10 @@ export class RsvpService {
     };
   }
   getGuests (invitee: Invitee): Observable<Invitee[]> {
-    return this.http.post<Invitee[]>(this.apiUrl+'get_guests.php',invitee,httpOptions)
-      .pipe(
-        tap(Invitee => this.log(`fetched Guest List`)),
-        catchError(this.handleError('getGuests', []))
-      );
+    return this.http.post<Invitee[]>(this.apiUrl+'get_guests.php',invitee,httpOptions).pipe(
+      tap(Invitee => this.log(`fetched Guest List`)),
+      catchError(this.handleError('getGuests', []))
+    );
   }
 
   checkInvite(invitee: Invitee): Observable<Invitee> {

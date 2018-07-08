@@ -28,7 +28,7 @@ export class RsvpComponent implements OnInit {
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService,private rsvpService:RsvpService,private router: Router) { }
 
   ngOnInit() {
-    console.log(this.getFromLocal());
+    this.getFromLocal();
   }
 
   getGuestList(): any {
@@ -49,10 +49,7 @@ export class RsvpComponent implements OnInit {
   }
 
   saveInLocal(type,val): void {
-    console.log( val);
     this.storage.set(type, val);
-    // this.token= this.storage.get(type);
-    // console.log(this.token);
   }
 
   add(name: string): void {
@@ -60,7 +57,6 @@ export class RsvpComponent implements OnInit {
     if (!name) { return; }
     this.rsvpService.checkInvite({ name } as Invitee)
       .subscribe(invitee => {
-         console.log(invitee);
          if(invitee.status == 'NO'){
            alert(invitee.content);
            return;
@@ -73,13 +69,10 @@ export class RsvpComponent implements OnInit {
       });
   }
   removeForm(index:string):void{
-    console.log(index);
     this.forms.splice(index, 1);
   }
   submit(): void {
     var token: string = this.storage.get('token');
-    console.log(this.local);
-    console.log(this.forms);
     var output:any = [];
     var local_output:any = [];
     local_output = Object.assign({}, this.local);
@@ -91,7 +84,6 @@ export class RsvpComponent implements OnInit {
           this.forms[i][n] = this.forms[i][n].trim();  
         }
       }
-      console.log(this.forms[i]['id']);
       if(output[0]['plus_one'] == '0'){
         if(this.forms[i]['id'] == '' || this.forms[i]['id'] == null){
           alert("Please make sure all rsvp's include a name");
@@ -105,29 +97,25 @@ export class RsvpComponent implements OnInit {
       }
       output.push(this.forms[i]);  
     }
-    console.log(output);
     output = JSON.stringify(output);
     this.rsvpService.submitRsvp({ rsvp : output} as Rsvp)
     .subscribe(invitee => {
-       console.log(invitee);
        this.saveInLocal('submitted','1');
        this.local['submitted'] = '1';
     });
   }
   addForm():void{
-    console.log();
     if(this.local.plus_one == '1' && this.forms.length > 0){
       return;
     }
     this.forms.push({name:null,email:null,song:null,message:null,coming:'1'});
     this.getGuestList();
-    console.log(this.forms);
   }
   cancel():void{
-    console.log('cancel');
     for(var i in this.storeObject){
       this.storage.remove(this.storeObject[i]);
     }
     this.getFromLocal();
+    this.forms = [];
   }
 }

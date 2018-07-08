@@ -13,15 +13,5 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
   }
-  text:any = {
-    Year: 'Year',
-    Month: 'Month',
-    Weeks: "Weeks",
-    Days: "Days Until The Wedding",
-    Hours: "Hours",
-    Minutes: "Minutes",
-    Seconds: "Seconds",
-    MilliSeconds: "MilliSeconds"
-  };
 
 }

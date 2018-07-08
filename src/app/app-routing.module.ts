@@ -5,7 +5,6 @@ import { ContactComponent } from './contact/contact.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { RegistryComponent } from './registry/registry.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
-import { TodoComponent } from './todo/todo.component';
 import { TravelComponent } from './travel/travel.component';
 import { PhotoComponent } from './photo/photo.component';
 import { FaqComponent } from './faq/faq.component';
@@ -19,8 +18,6 @@ const routes: Routes = [
   { path: 'schedule', component: ScheduleComponent },
   { path: 'registry', component: RegistryComponent },
   { path: 'schedule', component: ScheduleComponent },
-  { path: 'todo', component: TodoComponent },
-  { path: 'faq', component: FaqComponent },
   { path: 'travel', component: TravelComponent },
   { path: 'photo', component: PhotoComponent },
   { path: 'rsvp', component: RsvpComponent },

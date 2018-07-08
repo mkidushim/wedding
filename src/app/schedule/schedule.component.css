@@ -32,24 +32,6 @@
 .schedule-item:not(.left){
   border-left: 1px solid black;
 }
-.travel-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-}
-.travel-card{
-  height: auto;
-  min-height: 250px;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.travel-card img{
-  width: 155px;
-}
 .btn-container{
   margin-top: 20px;
 }

@@ -4,7 +4,6 @@ import { HttpClientModule }    from '@angular/common/http';
 //components
 import { AppModule } from './app.module';
 import { MessagesComponent } from './messages/messages.component';
-import { TitleComponent } from './title/title.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 //services
@@ -16,6 +15,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTableModule} from '@angular/material/table';
 import { RouterModule, Routes } from '@angular/router';
 import {APP_BASE_HREF} from '@angular/common';
+
 describe('AppModule', () => {
   let component: AppModule;
   let fixture: ComponentFixture<AppModule>;

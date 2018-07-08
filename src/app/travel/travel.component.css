@@ -1,7 +1,3 @@
-.schedule-info{
-  margin-top: 0px;
-  text-align: center;
-}
 .travel-section{
   max-width: 900px;
   margin: 0 auto;
@@ -66,7 +62,6 @@
   width: 155px;
   height: 150px;
 }
-/*responsiveness for travel page, just need to add display block to the travel-container*/
 @media only screen and (max-width: 768px) {
   .travel-container{
     flex-flow: column;

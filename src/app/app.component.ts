@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component,Renderer2} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,22 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   onDeactivate() {
-    console.log('scroll');
     document.body.scrollTop = 0;
     // Alternatively, you can scroll to top by using this other call:
     window.scrollTo(0, 0)
   }
-  title = 'app';
   status: boolean = false;
   clickEvent(){
       this.status = !this.status;       
+  }
+  deferredPrompt: any = {};
+  constructor(public renderer:Renderer2){
+    renderer.listen('window','beforeinstallprompt', (event) => {
+      event.preventDefault();
+      // Stash the event so it can be triggered later.
+      this.deferredPrompt = event;
+      console.log(event);
+     // Do something with 'event'
+   });
   }
 }

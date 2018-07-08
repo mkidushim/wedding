@@ -27,7 +27,6 @@
   /*margin: 25px auto;*/
   position: relative;
   display: inline-block;
-
 }
 a.btn{
   display: flex;
@@ -51,10 +50,10 @@ a.btn{
     align-items: center;
   }
 }
-.reg-desc{
+/*.reg-desc{
   text-align: center;
   width: 85%;
   margin: 0px auto;
   padding: 0;
   position: relative;
-}
+}*/

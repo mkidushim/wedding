@@ -5,6 +5,9 @@
   position: relative;
   text-align: center;
 }
+.rsvp-min-height{
+  min-height: 350px;
+}
 .rsvp-desc{
   text-align: center;
   width: 85%;

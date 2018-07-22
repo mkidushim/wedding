@@ -1,15 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgSelectModule, NG_SELECT_DEFAULT_CONFIG } from '@ng-select/ng-select';
 
 import { AppComponent } from './app.component';
 import { RsvpService } from './rsvp.service';
-import { MessageService } from './message.service';
 import { AppRoutingModule } from './app-routing.module';
-import { MessagesComponent } from './messages/messages.component';
 
 import { StorageServiceModule} from 'angular-webstorage-service';
 //material admin 
@@ -35,7 +33,6 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    MessagesComponent,
     RsvpComponent,
     LandingComponent,
     ScheduleComponent,
@@ -63,7 +60,7 @@ import { environment } from '../environments/environment';
     NgSelectModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [MessageService,RsvpService,ErrorStateMatcher],
+  providers: [RsvpService,ErrorStateMatcher],
   bootstrap: [AppComponent]
 })
 export class AppModule {

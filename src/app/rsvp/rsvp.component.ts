@@ -5,16 +5,15 @@ import { Rsvp } from '../rsvp';
 import {FormControl} from '@angular/forms';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import { RsvpService } from '../rsvp.service';
-import { MessagesComponent } from '../messages/messages.component';
 import {LOCAL_STORAGE, SESSION_STORAGE, WebStorageService} from 'angular-webstorage-service';
 
 @Component({
   selector: 'app-rsvp',
   templateUrl: './rsvp.component.html',
   styleUrls: ['./rsvp.component.css'],
-  providers: [MessagesComponent]
+  providers: []
 })
-@Injectable()
+// @Injectable()
 export class RsvpComponent implements OnInit {
   rsvp: Invitee[];
   email: string;

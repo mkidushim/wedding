@@ -6,7 +6,6 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
-import { MessageService } from './message.service';
 import { Invitee } from './invitee';
 import { Rsvp } from './rsvp';
 
@@ -18,7 +17,7 @@ const httpOptions = {
 
 @Injectable()
 export class RsvpService {
-  constructor(private http: HttpClient,private messageService: MessageService) { }
+  constructor(private http: HttpClient) { }
   private apiUrl = environment.baseURL;
   /**
    * Handle Http operation that failed.
@@ -27,7 +26,7 @@ export class RsvpService {
    * @param result - optional value to return as the observable result
    */
   private log(message: string) {
-    this.messageService.add('HeroService: ' + message);
+    console.log(message);
   }
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

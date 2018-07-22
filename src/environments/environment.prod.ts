@@ -6,4 +6,5 @@ export const environment = {
   baseURL: 'https://mikeandalexwedding2018.com/api/',
   production: true,
   stripeKey: 'pk_test_TXiIhcV9QpGK37toCq4hhCS7',
+  sourceMap: true
 };

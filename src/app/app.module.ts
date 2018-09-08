@@ -12,7 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { StorageServiceModule} from 'angular-webstorage-service';
 //material admin 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatTooltipModule,ErrorStateMatcher,MatIconModule,MatButtonModule,MatRadioModule,MatInputModule,MatListModule} from '@angular/material';
+import { MatPaginatorModule,MatSortModule,MatTableModule,MatTooltipModule,ErrorStateMatcher,MatIconModule,MatButtonModule,MatRadioModule,MatInputModule,MatListModule} from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 
 
@@ -28,6 +28,7 @@ import { CoupleComponent } from './couple/couple.component';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { GuestsComponent } from './guests/guests.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { environment } from '../environments/environment';
     PhotoComponent,
     RegistryComponent,
     FaqComponent,
-    CoupleComponent
+    CoupleComponent,
+    GuestsComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,9 @@ import { environment } from '../environments/environment';
     MatCardModule,
     MatRadioModule,
     MatTooltipModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     NgSelectModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],

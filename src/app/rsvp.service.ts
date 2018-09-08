@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { environment } from '../environments/environment';
-import { Invitee } from './invitee';
+import { Invitee,List } from './invitee';
 import { Rsvp } from './rsvp';
 
 
@@ -43,6 +43,12 @@ export class RsvpService {
     return this.http.post<Invitee[]>(this.apiUrl+'get_guests.php',invitee,httpOptions).pipe(
       tap(Invitee => this.log(`fetched Guest List`)),
       catchError(this.handleError('getGuests', []))
+    );
+  }
+  getList (): Observable<List[]> {
+    return this.http.get<List[]>(this.apiUrl+'guest_list.php',httpOptions).pipe(
+      tap(List => this.log(`fetched Guest List`)),
+      catchError(this.handleError('getList', []))
     );
   }
 

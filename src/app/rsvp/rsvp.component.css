@@ -31,7 +31,7 @@ div.full-width{
   position: relative;
 }
 .main-form{
-  padding: 40px 20px 20px 20px;
+  padding: 10px 20px 20px 20px;
   border-top: 1px solid black;
 }
 .secondary-form{
@@ -54,14 +54,10 @@ div.full-width{
   font-size: 40px;
 }
 .add-rsvp-row{
-  height: 25px;
+  height: 75px;
 }
 .add-rsvp-btn{
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  padding: 0;
-  min-width: 50px;
+  background-color: inherit;
 }
 .btn-row{
   text-align: right;
@@ -74,4 +70,9 @@ div.full-width{
   .mat-radio-button[value='1']{
     margin-bottom: 10px;
   }
+}
+
+.guest-btn{
+  padding: 10px;
+  font-weight: bold;
 }

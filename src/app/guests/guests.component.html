@@ -1,0 +1,46 @@
+<section class="list-section">
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- ID Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+
+      <!-- Progress Column -->
+      <ng-container matColumnDef="rsvp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> RSVP </th>
+        <td mat-cell *matCellDef="let row"> {{row.rsvp}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="coming">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Coming </th>
+        <td mat-cell *matCellDef="let row"> {{row.coming}} </td>
+      </ng-container>
+     
+      <ng-container matColumnDef="message">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Message </th>
+        <td mat-cell *matCellDef="let row"> {{row.message}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="song">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Song </th>
+        <td mat-cell *matCellDef="let row"> {{row.song}} </td>
+      </ng-container>
+
+      <!-- Color Column -->
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</section>

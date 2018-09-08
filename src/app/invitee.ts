@@ -7,3 +7,6 @@ export class Invitee {
   status: string;
   content: string;
 }
+export class List {
+  list:any
+}

@@ -9,6 +9,7 @@ import { TravelComponent } from './travel/travel.component';
 import { PhotoComponent } from './photo/photo.component';
 import { FaqComponent } from './faq/faq.component';
 import { CoupleComponent } from './couple/couple.component';
+import { GuestsComponent } from './guests/guests.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'travel', component: TravelComponent },
   { path: 'photo', component: PhotoComponent },
   { path: 'rsvp', component: RsvpComponent },
+  { path: 'guest', component: GuestsComponent },
 ];
 
 @NgModule({

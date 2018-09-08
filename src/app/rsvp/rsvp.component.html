@@ -5,7 +5,7 @@
   <div *ngIf="local.submitted == null">
     <div class="rsvp-container" *ngIf="local.token == null">
       <div class="rsvp-desc">
-        Please let us know your plans here by entering your name as it appears on your invitation. We hope we get to celebrate together!
+        Please let us know your plans here by entering your name. We hope we get to celebrate together!
       </div>
       <div>
         <form class="example-form">
@@ -24,15 +24,15 @@
     </div>
     <div class="rsvp-submit-container" *ngIf="local.token !== null">
       <div class="rsvp-desc">
-        Please let us know if you are coming! Also if you would like to rsvp for another guest on your invitation please click on the plus below.  
+        If you are submitting an RSVP for you and another person on your invitation, please click the add an additional guest button for each person you would like to rsvp for.  
       </div>
       <div>
         <!-- <mat-card>
           <mat-card-content> -->
             <form class="main-form">
               <div class="add-rsvp-row">
-                <button matTooltipPosition="above" matTooltip="Add another guest" type="button" class="add-rsvp-btn" mat-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
-                  <mat-icon>add</mat-icon>
+                <button type="button" class="add-rsvp-btn" mat-raised-button (click)="addForm();" *ngIf="this.local.plus_one == '1' && this.forms.length == 0 || this.local.plus_one == '0'">
+                  <span class="guest-btn">Add an additional guest</span>
                 </button>
               </div>
               <div>
@@ -91,7 +91,7 @@
                 </div>
                 <div>
                   <mat-form-field class="full-width">
-                    <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
+                    <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song Request(To be played by the DJ)"[(ngModel)]=forms[i].song>
                   </mat-form-field>
                 </div>
                 <div>
@@ -135,7 +135,7 @@
                 </div>
                 <div>
                   <mat-form-field class="full-width">
-                    <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song"[(ngModel)]=forms[i].song>
+                    <input matInput ngClass="song{{i}}" name="song{{i}}" placeholder="Song Request(To be played by the DJ)" [(ngModel)]=forms[i].song>
                   </mat-form-field>
                 </div>
                 <div>

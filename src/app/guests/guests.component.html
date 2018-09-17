@@ -12,16 +12,11 @@
         <td mat-cell *matCellDef="let row"> {{row.name}} </td>
       </ng-container>
 
-      <!-- Progress Column -->
-      <ng-container matColumnDef="rsvp">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> RSVP </th>
-        <td mat-cell *matCellDef="let row"> {{row.rsvp}} </td>
-      </ng-container>
 
       <!-- Name Column -->
-      <ng-container matColumnDef="coming">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header> Coming </th>
-        <td mat-cell *matCellDef="let row"> {{row.coming}} </td>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> status </th>
+        <td mat-cell *matCellDef="let row"> {{row.status}} </td>
       </ng-container>
      
       <ng-container matColumnDef="message">
@@ -33,6 +28,7 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Song </th>
         <td mat-cell *matCellDef="let row"> {{row.song}} </td>
       </ng-container>
+      
 
       <!-- Color Column -->
 

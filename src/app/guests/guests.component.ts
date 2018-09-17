@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { RsvpService } from '../rsvp.service';
-import { Router } from '@angular/router';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import { List } from '../invitee';
 
@@ -10,14 +9,14 @@ import { List } from '../invitee';
   styleUrls: ['./guests.component.css']
 })
 export class GuestsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'rsvp', 'coming','message','song'];
+  displayedColumns: string[] = ['name', 'status','message','song'];
   dataSource: MatTableDataSource<List>;
   guest_list:any  = [];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private rsvpService:RsvpService,private router: Router) { 
+  constructor(private rsvpService:RsvpService) { 
   }
 
   ngOnInit() {
